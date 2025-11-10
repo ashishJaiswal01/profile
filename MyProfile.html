@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashish Jaiswal - Senior Engineering Leader</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Load Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Inter font as the default sans-serif font */
+        html {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom styles for animations and timeline */
+        
+        /* Fade-in animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Active link styling for nav */
+        .nav-link.active {
+            color: #2563EB; /* text-blue-600 */
+            font-weight: 600;
+        }
+        
+        /* Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem; /* 40px */
+            padding-bottom: 2rem; /* 32px */
+        }
+        
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        
+        /* The vertical line */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem; /* 8px */
+            top: 0.25rem; /* 4px */
+            bottom: -0.25rem; /* -4px */
+            width: 2px;
+            background-color: #E5E7EB; /* gray-200 */
+        }
+        
+        .timeline-item:last-child::before {
+            height: 0; /* No line after the last item */
+        }
+
+        /* The circle on the timeline */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 0; /* Aligned with left-0 */
+            top: 0.25rem; /* 4px */
+            width: 1.25rem; /* 20px */
+            height: 1.25rem; /* 20px */
+            border-radius: 9999px; /* rounded-full */
+            background-color: #3B82F6; /* bg-blue-500 */
+            border: 4px solid #FFFFFF; /* border-4 border-white */
+            z-index: 10;
+        }
+
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header Navigation -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-2xl font-bold text-gray-900">Ashish Jaiswal</a>
+                </div>
+                <!-- Navigation Links -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#summary" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Summary</a>
+                        <a href="#achievements" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Achievements</a>
+                        <a href="#skills" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Skills</a>
+                        <a href="#experience" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Experience</a>
+                        <a href="#education" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Education</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button (optional, not functional here) -->
+                <div class="md:hidden">
+                    <button class="text-gray-600 hover:text-gray-800">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+
+        <!-- Home/Hero Section -->
+        <section id="home" class="min-h-[calc(100vh-64px)] flex items-center py-20">
+            <div class="w-full">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight">
+                    ASHISH JAISWAL
+                </h1>
+                <p class="mt-4 text-2xl md:text-3xl font-medium text-blue-600">
+                    Senior Engineering Leader | Cloud-Native SaaS | AI/ML Initiatives
+                </p>
+                
+                <div class="flex flex-wrap gap-x-8 gap-y-4 text-gray-600 mt-10 text-base">
+                    <span class="flex items-center">
+                        <i class="fas fa-map-marker-alt w-5 mr-3 text-blue-500"></i>
+                        Pune, Maharashtra
+                    </span>
+                    <a href="tel:+917722031445" class="flex items-center hover:text-blue-600 transition-colors">
+                        <i class="fas fa-phone w-5 mr-3 text-blue-500"></i>
+                        +91 7722031445
+                    </a>
+                    <a href="mailto:ashish.jaisi@gmail.com" class="flex items-center hover:text-blue-600 transition-colors">
+                        <i class="fas fa-envelope w-5 mr-3 text-blue-500"></i>
+                        ashish.jaisi@gmail.com
+                    </a>
+                    <span class="flex items-center">
+                        <i class="fab fa-linkedin w-5 mr-3 text-blue-500"></i>
+                        LinkedIn
+                    </span>
+                </div>
+                
+                <div class="mt-12 flex flex-wrap gap-4">
+                    <a href="#summary" class="inline-block bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition-all transform hover:scale-105">
+                        Learn More <i class="fas fa-arrow-down ml-2"></i>
+                    </a>
+                    <!-- Download button added here -->
+                    <a href="Ashish_Jaiswal.pdf" download="Ashish_Jaiswal.pdf" class="inline-block bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg shadow-lg border border-blue-600 hover:bg-gray-50 transition-all transform hover:scale-105">
+                        Download PDF <i class="fas fa-download ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wrapper for all other sections -->
+        <div class="space-y-16 md:space-y-24 pb-24">
+
+            <!-- Executive Summary -->
+            <section id="summary" class="pt-24 -mt-16 fade-in-section">
+                <div class="bg-white p-8 md:p-12 rounded-xl shadow-xl">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-6 border-b-2 border-blue-200 pb-4">Executive Summary</h2>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Senior Engineering Leader with around 20 years of experience leading global teams in building high-reliability, cloud-native (AWS/Multi-Cloud) SaaS platforms. Demonstrated success in scaling engineering organizations, driving AI/ML initiatives (Generative AI, MLOps), and executing multi-million-dollar programs. Possesses deep expertise in event-driven distributed systems, API-first microservices, CI/CD pipelines, cybersecurity, and regulatory compliance — consistently advancing engineering velocity and operational excellence. PMI-ACP certified.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Key Achievements -->
+            <section id="achievements" class="pt-24 -mt-16 fade-in-section">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-8 text-center">Key Achievements</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Achievement 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl border-t-4 border-blue-500">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-brain text-3xl text-blue-500"></i>
+                            <h3 class="ml-4 text-lg font-semibold text-gray-800">AI Strategy & Execution</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm">Led first company AI initiative end-to-end. Reduced manual curation by 90% and saved $650K.</p>
+                    </div>
+                    <!-- Achievement 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl border-t-4 border-blue-500">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-cloud-upload-alt text-3xl text-blue-500"></i>
+                            <h3 class="ml-4 text-lg font-semibold text-gray-800">Cloud-Native Transformation</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm">Led AWS SaaS platform build for genomic data, achieving 10x scalability and 30% faster processing.</p>
+                    </div>
+                    <!-- Achievement 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl border-t-4 border-blue-500">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-users text-3xl text-blue-500"></i>
+                            <h3 class="ml-4 text-lg font-semibold text-gray-800">Strategic Team Scaling</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm">Scaled hybrid team from 0 &rarr; 60+ in 6 months for product migration with zero business disruption.</p>
+                    </div>
+                    <!-- Achievement 4 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl border-t-4 border-blue-500">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-user-tie text-3xl text-blue-500"></i>
+                            <h3 class="ml-4 text-lg font-semibold text-gray-800">Improved Hiring Process</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm">Reduced time-to-fill by 40% and improved quality-of-hire by 15% via structured interviews.</p>
+                    </div>
+                    <!-- Achievement 5 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl border-t-4 border-blue-500">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-handshake text-3xl text-blue-500"></i>
+                            <h3 class="ml-4 text-lg font-semibold text-gray-800">Stakeholder Engagement</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm">Secured $500K for a Platform Transformation team, boosting productivity 20% and cutting costs 15%.</p>
+                    </div>
+                    <!-- Achievement 6 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl border-t-4 border-blue-500">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-cogs text-3xl text-blue-500"></i>
+                            <h3 class="ml-4 text-lg font-semibold text-gray-800">SDLC Process Design</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm">Led SOP design as core member, enabling company-wide adoption in 6 months.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section id="skills" class="pt-24 -mt-16 fade-in-section">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-8 text-center">Core Competencies</h2>
+                <div class="bg-white p-8 md:p-12 rounded-xl shadow-xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        
+                        <!-- Leadership & Strategy -->
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center"><i class="fas fa-chart-line text-blue-500 mr-2"></i> Leadership & Strategy</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Engineering Transformation</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Scrum/Kanban/SAFe</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">KPI/OKRS</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Team Scaling</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Budgeting</span>
+                            </div>
+                        </div>
+                        
+                        <!-- AI/ML -->
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center"><i class="fas fa-microchip text-green-500 mr-2"></i> AI/ML</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Generative AI</span>
+                                <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">NLP</span>
+                                <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">LangChain</span>
+                                <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Predictive Modeling</span>
+                                <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">PyMuPDF</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Cloud & Infra -->
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center"><i class="fas fa-cloud text-yellow-500 mr-2"></i> Cloud & Infra</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">AWS</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">GCP</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Kubernetes</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Docker</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">CI/CD</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">MLOps</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Data & Architecture -->
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center"><i class="fas fa-database text-indigo-500 mr-2"></i> Data & Architecture</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Microservices</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Event-driven (Kafka, SQS)</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Spark</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">API-First</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">ELK stack</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Programming & DBs -->
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center"><i class="fas fa-code text-purple-500 mr-2"></i> Programming & DBs</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">Java</span>
+                                <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">Spring Boot</span>
+                                <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                                <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">Node.js</span>
+                                <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">React</span>
+                                <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">PostgreSQL</span>
+                                <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">MongoDB</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Security & Compliance -->
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center"><i class="fas fa-shield-alt text-red-500 mr-2"></i> Security & Compliance</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-red-100 text-red-800 text-sm font-medium px-3 py-1 rounded-full">OAuth2</span>
+                                <span class="bg-red-100 text-red-800 text-sm font-medium px-3 py-1 rounded-full">SAML</span>
+                                <span class="bg-red-100 text-red-800 text-sm font-medium px-3 py-1 rounded-full">OWASP</span>
+                                <span class="bg-red-100 text-red-800 text-sm font-medium px-3 py-1 rounded-full">GDPR</span>
+                                <span class="bg-red-100 text-red-800 text-sm font-medium px-3 py-1 rounded-full">HIPAA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section id="experience" class="pt-24 -mt-16 fade-in-section">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-12 text-center">Professional Experience</h2>
+                <div class="relative"> <!-- Timeline container -->
+                    
+                    <!-- Job 1 -->
+                    <div class="timeline-item">
+                        <div class="bg-white p-6 rounded-lg shadow-xl border-l-4 border-blue-600">
+                            <h3 class="text-xl font-bold text-gray-900">Senior Engineering Manager</h3>
+                            <div class="flex justify-between items-baseline flex-wrap mb-2">
+                                <span class="text-lg font-semibold text-gray-700">Velsera - Health Tech</span>
+                                <span class="text-gray-500 text-sm font-medium">Apr 2023 - Present | Pune, India</span>
+                            </div>
+                            <ul class="list-disc list-inside mt-2 pl-2 space-y-2 text-gray-700">
+                                <li><span>Scaled and led a 45-member team to deliver an AI-powered biomedical knowledge extraction platform (LangChain, BERT),
+				    <br>achieving 100% recall, 90% precision, and saving 400 researcher-hours/week.</span></li>
+                                <li>Spearheaded legacy platform transformation to event-driven microservices, reducing cycle time by 40% and increasing feature output from 4 to 7 per quarter.</li>
+                                <li>Managed a $2M+ cloud budget, achieving a 15% cost reduction through strategic initiatives.</li>
+                                <li>Collaborated across teams (Product, UX, DevOps, Security) to achieve 90% on-time project completion.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="timeline-item">
+                        <div class="bg-white p-6 rounded-lg shadow-xl border-l-4 border-blue-600">
+                            <h3 class="text-xl font-bold text-gray-900">Software Engineering Manager</h3>
+                            <div class="flex justify-between items-baseline flex-wrap mb-2">
+                                <span class="text-lg font-semibold text-gray-700">Siemens Digital Industries</span>
+                                <span class="text-gray-500 text-sm font-medium">Jun 2014 - Jan 2023 | Pune, India</span>
+                            </div>
+                            <ul class="list-disc list-inside mt-2 pl-2 space-y-2 text-gray-700">
+                                <li>Led the Mendix Marketplace Supplier & Platform Services domain (KONG, Entitlement, Metering).</li>
+                                <li>Formed and scaled multiple Scrum teams (25+ members) with a 90% retention rate.</li>
+                                <li>Accelerated customer acquisition by 10% through enhanced analytics.</li>
+                                <li>Automated purchase flow, boosting basic license sales by 20%.</li>
+                                <li>Improved page performance by 65% (sub-2-second load) and maintained 99.9% uptime.</li>
+                                <li>Drove quarterly OKRs and conducted 20+ annual performance reviews.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div class="timeline-item">
+                        <div class="bg-white p-6 rounded-lg shadow-xl border-l-4 border-blue-600">
+                            <h3 class="text-xl font-bold text-gray-900">Senior Developer/Tech Lead</h3>
+                            <div class="flex justify-between items-baseline flex-wrap mb-2">
+                                <span class="text-lg font-semibold text-gray-700">CSC / PayPal</span>
+                                <span class="text-gray-500 text-sm font-medium">Aug 2011 - Jun 2014 | Chennai, India</span>
+                            </div>
+                            <ul class="list-disc list-inside mt-2 pl-2 space-y-2 text-gray-700">
+                                <li>Built and optimized payment automation pipelines, improving transaction efficiency by 15%.</li>
+                                <li>Led agile teams for payment risk systems with a strong focus on compliance and reliability.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Job 4 -->
+                    <div class="timeline-item">
+                        <div class="bg-white p-6 rounded-lg shadow-xl border-l-4 border-blue-600">
+                            <h3 class="text-xl font-bold text-gray-900">Senior Software Engineer</h3>
+                            <div class="flex justify-between items-baseline flex-wrap mb-2">
+                                <span class="text-lg font-semibold text-gray-700">Sungard</span>
+                                <span class="text-gray-500 text-sm font-medium">Sep 2009 - Jul 2011 | Pune, India</span>
+                            </div>
+                            <ul class="list-disc list-inside mt-2 pl-2 space-y-2 text-gray-700">
+                                <li>Enhanced J.P. Morgan's Power Portal using C++/Linux.</li>
+                                <li>Improved client record update efficiency by 20% via automation.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Job 5 -->
+                    <div class="timeline-item">
+                        <div class="bg-white p-6 rounded-lg shadow-xl border-l-4 border-blue-600">
+                            <h3 class="text-xl font-bold text-gray-900">Software Engineer</h3>
+                            <div class="flex justify-between items-baseline flex-wrap mb-2">
+                                <span class="text-lg font-semibold text-gray-700">Geometric Software</span>
+                                <span class="text-gray-500 text-sm font-medium">May 2005 - Sep 2009 | Pune, India</span>
+                            </div>
+                            <ul class="list-disc list-inside mt-2 pl-2 space-y-2 text-gray-700">
+                                <li>Developed CAD/CAE tools; designed new UIs and HTML-based result displays.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div> <!-- End Timeline container -->
+            </section>
+
+            <!-- Education & Certs -->
+            <section id="education" class="pt-24 -mt-16 fade-in-section">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    
+                    <!-- Education -->
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-8">Education</h2>
+                        <div class="space-y-4">
+                            <div class="bg-white p-5 rounded-lg shadow-md border-l-4 border-blue-400">
+                                <p class="text-lg font-semibold text-gray-800">MS in Software Systems</p>
+                                <p class="text-gray-600">BITS Pilani</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-lg shadow-md border-l-4 border-blue-400">
+                                <p class="text-lg font-semibold text-gray-800">Organizational Leadership</p>
+                                <p class="text-gray-600">IIM Ahmedabad</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-lg shadow-md border-l-4 border-blue-400">
+                                <p class="text-lg font-semibold text-gray-800">PG Diploma, Product Design</p>
+                                <p class="text-gray-600">Pune University</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-lg shadow-md border-l-4 border-blue-400">
+                                <p class="text-lg font-semibold text-gray-800">BE in Mechanical Engineering</p>
+                                <p class="text-gray-600">RKDF IST, Bhopal</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications & Accomplishments -->
+                    <div>
+                        <!-- Certifications -->
+                        <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-8">Certifications</h2>
+                        <div class="space-y-4 mb-10">
+                            <div class="bg-white p-5 rounded-lg shadow-md border-l-4 border-green-400">
+                                <p class="text-lg font-semibold text-gray-800">PMI-Agile Certified Practitioner (PMI-ACP)</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-lg shadow-md border-l-4 border-green-400">
+                                <p class="text-lg font-semibold text-gray-800">AWS Certified Cloud Practitioner</p>
+                            </div>
+                        </div>
+
+                        <!-- Accomplishments -->
+                        <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-8">Accomplishments</h2>
+                        <div class="bg-white p-5 rounded-lg shadow-md border-l-4 border-purple-400">
+                            <ul class="list-disc list-inside pl-2 space-y-2 text-gray-700">
+                                <li>Achieved 100% team approval rating in leadership survey</li>
+                                <li>Star Award - Start-up of the Year, Siemens</li>
+                                <li>Spot and Star Awards for quality work - PayPal</li>
+                                <li>Gold Medal - Best All-Rounder, NCC (1997)</li>
+                                <li>State-Level Football Player & School Captain</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        
+        </div> <!-- End other sections wrapper -->
+    </div> <!-- End Main Content Wrapper -->
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center">
+            <p>&copy; 2024 Ashish Jaiswal. All rights reserved.</p>
+            <p class="text-sm mt-2">Built with HTML, Tailwind CSS, and JavaScript.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Animations and Active Nav -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Intersection Observer for Fade-in Animations ---
+            const sections = document.querySelectorAll('.fade-in-section');
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // No need to unobserve if we want the animation to trigger again on re-entry
+                        // observer.unobserve(entry.target);
+                    } else {
+                         // Optional: Remove visibility when scrolling past
+                         entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, {
+                rootMargin: '0px 0px -150px 0px' // Trigger when 150px from bottom
+            });
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // --- Active Nav Link Highlighting on Scroll ---
+            const navLinks = document.querySelectorAll('.nav-link');
+            const allSections = document.querySelectorAll('section');
+            
+            // Function to remove active class from all links
+            function removeActiveClasses() {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+            }
+
+            // Observe sections to set active nav link
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        removeActiveClasses();
+                        
+                        // Find the corresponding nav link and add active class
+                        const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        }
+                    }
+                });
+            }, {
+                rootMargin: '-50% 0px -50% 0px' // Active when section is in middle 50% of viewport
+            });
+
+            allSections.forEach(section => {
+                if (section.id !== 'home') { // Don't observe the home section for this
+                    navObserver.observe(section);
+                }
+            });
+
+            // Special case for home (when scrolled all the way up)
+            const homeSection = document.getElementById('home');
+            const homeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        removeActiveClasses();
+                    }
+                });
+            }, {
+                threshold: 0.8 // When 80% of home is visible
+            });
+            homeObserver.observe(homeSection);
+
+        });
+    </script>
+
+</body>
+</html>
